@@ -1,0 +1,15 @@
+.TrackListContainer {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: white;
+    background-color: purple;
+    padding: 10px;
+}
+
+.TrackListItems {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
