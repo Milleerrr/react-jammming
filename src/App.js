@@ -3,7 +3,7 @@ import './App.css';
 
 import SearchBar from './components/SearchBar/SearchBar';
 import SearchResults from './components/SearchResults/SearchResults';
-import TrackList from './components/TrackList/TrackList';
+import Playlist from './components/Playlist/Playlist';
 
 function App() {
   return (
@@ -16,11 +16,7 @@ function App() {
       </div>
       <div className="ListsContainer">
         <SearchResults />
-        <div>
-          <TrackList />
-          <button>Add to Spotify</button>
-        </div>
-        
+        <Playlist />
       </div>
     </div>
   );

@@ -1,19 +1,11 @@
-.SearchBar {
+.Playlist {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
-    margin-top: 1.5rem;
+    background-color: rgba(128, 0, 128, 0.9);
 }
 
-.SearchInput {
-    padding: 1rem;
-    border-radius: 0.25rem;
-    text-align: center;
-    border: none;
-}
-
-.SearchButton {
+.SaveToSpotify {
     font-size: calc(10px + 2vmin);
     color: white;
     margin-top: 1.5rem;
@@ -22,4 +14,5 @@
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
     border: none;
+    margin-bottom: 1rem;
 }

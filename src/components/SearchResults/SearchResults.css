@@ -1,0 +1,9 @@
+.SearchResults {
+    background-color: rgba(128, 0, 128, 0.9);
+}
+
+.SearchResults h2 {
+    text-align: left;
+    margin-left: 1rem;
+    color: white;
+}
