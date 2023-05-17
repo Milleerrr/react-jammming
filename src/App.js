@@ -1,16 +1,21 @@
-import logo from './logo.svg';
 import React, { useState, useCallback } from "react";
+import { toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 import SearchBar from './components/SearchBar/SearchBar';
 import SearchResults from './components/SearchResults/SearchResults';
 import Playlist from './components/Playlist/Playlist';
 import Spotify from './util/Spotify';
+import SuccessMessage from "./components/SuccessMessage/SuccessMessage";
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [playlistName, setPlaylistName] = useState("New Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([]);
+  const [isPlaylistSaved, setIsPlaylistSaved] = useState(false);
+
 
   const search = useCallback((term) => {
     Spotify.search(term).then(setSearchResults);
@@ -43,13 +48,17 @@ function App() {
       Spotify.savePlaylist(playlistName, trackUris).then(() => {
         setPlaylistName("New Playlist");
         setPlaylistTracks([]);
+        setIsPlaylistSaved(true);
       });
     } else {
       // Alert the user to add tracks to the playlist
-      alert("Please add tracks to your playlist before saving.");
+      toast.error("Please add tracks to your playlist before saving.");
     }
   }, [playlistName, playlistTracks]);
-  
+
+  const checkIfSaved = useCallback((name) => {
+    if (name);
+  }, []);
 
   return (
     <div>
@@ -58,6 +67,7 @@ function App() {
       </h1>
       <div className="App">
         <SearchBar onSearch={search} />
+        <SuccessMessage isSaved={isPlaylistSaved}/>
         <div className="App-playlist">
           <SearchResults searchResults={searchResults} onAdd={addTrack} />
           <Playlist

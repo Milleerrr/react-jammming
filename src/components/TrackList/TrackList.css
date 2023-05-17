@@ -1,20 +1,3 @@
-.TrackListContainer {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    color: white;
-    padding: 10px;
-}
-
-.TrackListItems {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.PlaylistName {
-    padding: 1rem;
-    border-radius: 0.25rem;
-    text-align: center;
-    border: none;
-}
+.TrackList {
+    width: 100%;
+  }

@@ -1,20 +1,18 @@
-import React, { useState, useCallback } from "react";
-import { toast } from 'react-toastify';
+import React, { useEffect } from "react";
+import { toast, ToastContainer } from 'react-toastify';
 
-import "./SuccessPage.css";
+import "./SuccessMessage.css";
 import 'react-toastify/dist/ReactToastify.css';
 
-const SuccessMessage = (props) => {
-  let notify;
-
-  const ifPlayListSaved = () => {
-    if (props.onSave) {
-      notify = () => toast("Success! Playlist have been saved to your Spotify Account. Enjoy the tunes!");
+const SuccessMessage = ({ isSaved }) => {
+  useEffect(() => {
+    if (isSaved) {
+      toast.success("Success! Playlist has been added 😁");
     }
-  };
+  }, [isSaved]);
 
   return (
-    <div isSaved={ifPlayListSaved}>
+    <div>
       <ToastContainer />
     </div>
   );
